@@ -3,7 +3,7 @@
 import React from 'react'
 import OneProduct from "./OneProduct";
 
-function Products({ products }) {
+function Products({ products, onAdd, onRemove }) {
   //  const name= "naziv proizvoda";
   //  const desc= "neki opis proizvoda";
 //  const prod = {
@@ -22,7 +22,8 @@ function Products({ products }) {
   return (
     <div className='all-products'>
 
-      {products.map((prod)=>( <OneProduct product= {prod}/>
+      {products.map((prod)=>(
+         <OneProduct product= {prod} key={prod.id} onAdd={onAdd} onRemove={onRemove}/>
 ))}
   {/*    <OneProduct product={products[0]} />
       <OneProduct product={products[1]} />

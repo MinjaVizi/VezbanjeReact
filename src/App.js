@@ -1,10 +1,15 @@
 import './App.css';
 import NavBar from './components/navbar';
 import Products from './components/products';
+import { useState } from 'react';
 
 
 function App() {
-  const prom = <h1>Dobrodosli</h1>
+
+  //const [state, setstate] = useState(initialState)
+  const [cartNum, setCartNum] = useState(0);
+
+
   const products = [
     {
       id: 1,
@@ -37,12 +42,23 @@ function App() {
       amount: 2
     }
   ];
-  
+  function addProduct (title){
+    console.log("Dodat je proizvod: " + title);
+    setCartNum(cartNum + 1);
+    console.log("Broj proizvoda u korpi: " + cartNum);
+  }
+  function removeProduct (title){
+    console.log("Oduzet je proizvod: " + title);
+    setCartNum(cartNum - 1);
+    console.log("Broj proizvoda u korpi: " + cartNum);
+  }
+
   return ( 
   <div className="App">
-    <NavBar></NavBar>
+    <NavBar cartNum={cartNum}></NavBar>
   
-    <Products products={products} />
+    <Products products={products} onAdd={addProduct} onRemove={removeProduct}/>
+    
     </div>
   );
 
