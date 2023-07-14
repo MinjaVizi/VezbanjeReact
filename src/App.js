@@ -2,6 +2,7 @@ import './App.css';
 import NavBar from './components/navbar';
 import Products from './components/products';
 import { useState } from 'react';
+import Cart from './components/Cart';
 
 
 function App() {
@@ -58,7 +59,7 @@ function App() {
     <NavBar cartNum={cartNum}></NavBar>
   
     <Products products={products} onAdd={addProduct} onRemove={removeProduct}/>
-    
+    <Cart/>
     </div>
   );
 
