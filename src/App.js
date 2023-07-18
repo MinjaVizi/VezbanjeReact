@@ -68,7 +68,8 @@ console.log (prod.amount)
 
   function removeProduct (title, id){
     console.log("Oduzet je proizvod: " + title);
-    setCartNum(cartNum - 1);
+    if (cartNum >0){ setCartNum(cartNum - 1);
+    }
     console.log("Broj proizvoda u korpi: " + cartNum);
     products.forEach ((prod)=>{
 
