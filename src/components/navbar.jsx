@@ -1,22 +1,25 @@
 // precica rfce
 import React from "react";
 import {BsCart4} from "react-icons/bs";
+import { Link } from "react-router-dom"
+
 
 function NavBar ({cartNum}) {
  
 
     return ( 
     <div className="navBar">  
-      <a> my store</a>
+      <Link to="/">My store</Link>
+      <Link to="/cart" className="cart-items">
 <div className="cart-items">
 <BsCart4/> 
 <p className="cart-num">{cartNum}</p>
 
+</div></Link>
 </div>
-</div>
-);
+)}
 
-}
+
 
 
 export default NavBar;

@@ -23,7 +23,7 @@ function Products({ products, onAdd, onRemove }) {
     <div className='all-products'>
 
       {products.map((prod)=>(
-         <OneProduct product= {prod} key={prod.id} onAdd={onAdd} onRemove={onRemove}/>
+         <OneProduct product= {prod} key={prod.id} onAdd={onAdd} onRemove={onRemove} inCart={1}/>
 ))}
   {/*    <OneProduct product={products[0]} />
       <OneProduct product={products[1]} />
